@@ -16,16 +16,22 @@ Most countries around the world use the Celcius scale to indicate temperatures, 
 
 Input:
 ```
-avimax37@gmail.com
+Press 1 for Celcius to Fahrenheit
+Press 2 for Fahrenheit to Celcius
+Press 3 for Celcius to Kelvin
+Press 4 for Kelvin to Celcius
+Press 5 for Fahrenheit to Kelvin
+Press 6 for Kelvin to Fahrenheit
+Enter choice: 1
 ```
 
 Output:
 ```
-Your username is: avimax37
-Your domain is: gmail.com
+Enter temperature in C for conversion: 100
+Temperature is: 212.0 F
 ```
 
-Here we got **`avimax37`** as username and **`gmail.com`** as domain.
+Here we gave **`100 C`** as input and got **`212.0 F`** as output.
 
 <!-- INSTALLATION -->
 
@@ -65,54 +71,6 @@ python hello.py
 ```
 
 VS Code or PyCharm can also be used.
-
-<!-- CODE -->
-
-## Code
-
-So at first we are going to ask the user to enter the email that is to be sliced.
-
-```python
-print("Please enter your Email Id:")
-email = input().strip()
-```
-
-Here, as usual, we are making use of the **`input()`** function to get the input from the user in form of a string. We will store this input string in **`email`** variable.
-
-Also we are making use of the **`strip()`** function. **`strip()`** function will remove any additional & unwanted spacing on both sides of the input string. So that we can make sure that we have only the email in the input and not any unwanted spaces.
-
-```python
-if email.find("@") != -1:
-```
-
-Here we are checking if the input string contains **`@`** or not. If it contains **`@`**, then it is considered as a valid email id and we move to the next step, which is slicing the email.
-
-```python
-username = email[:email.index("@")]
-domain = email[email.index("@") + 1:]
-```
-
-Now, we print the **`username`** and **`domain`** to show the result.
-
-```python
-print("Your username is: ", username)
-print("Your domain is: ", domain)
-```
-
-If the input string does not contain **`@`**, then it is considered as an invalid email id and we get out of the loop with a warning message.
-
-```python
-else:
-     print("Please enter a valid Email Id.")
-```
-
-<!-- LOGIC -->
-
-## Logic
-
-Let's consider the input is **`avimax37@gmail.com`**, so when we write **`email[email.index("@"):]`**, our **`index()`** function will interpret it as **`email[:8]`** as our **`@`** is located at index **8**. Now **`email[:8]`** knows that **`@`** is located at index **8**, so now it will keep the part before index **8** and discard the rest. It will store the stripped value in **`username`**.
-
-This exact same process is followed for **`domain`** also.
 
 <!-- LICENSE -->
 
